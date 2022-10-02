@@ -1,0 +1,60 @@
+@host = http://localhost:8000
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMzMTAzOTU3LCJleHAiOjE2MzMxOTAzNTcsIm5iZiI6MTYzMzEwMzk1NywianRpIjoib2hVbWdMTWhTRHhMUUM3SCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.R_kfyzPqLovlfq0lrRQPS1SWKpOr0YDBb1F0HQM65KE
+
+###
+
+# login
+POST {{ host }}/api/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "vfriesen@example.org",
+    "password": "secret"
+}
+
+###
+
+# get one meal
+GET {{ host }}/api/meals/3 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+GET http://127.0.0.1:8000/api/meals HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMzMDAxNjgxLCJleHAiOjE2MzMwMDUyODEsIm5iZiI6MTYzMzAwMTY4MSwianRpIjoiV0h4bVNqRXRzSHNCUlY4eSIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.tj9nG4qMuBU3vLmBHjutykYaC3rEGuozC1npkfU3usM
+
+###
+
+# delete meal
+DELETE {{ host }}/api/meals/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+# create meal
+POST {{ host }}/api/meals/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+    "title": "laborum_AbdoCool10",
+    "description": "description description",
+    "items": [
+        { "id": 1, "quantity": 2 },
+        { "id": 3, "quantity": 1 }
+    ]
+}
+
+###
+
+# edit meal
+PUT {{ host }}/api/meals/2 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+    "title": "laborum_AbdoCoolEdited"
+}

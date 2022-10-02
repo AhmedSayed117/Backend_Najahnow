@@ -1,0 +1,40 @@
+GET http://127.0.0.1:8000/api/fitness_summaries/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMyOTkxMTcxLCJleHAiOjE2MzI5OTQ3NzEsIm5iZiI6MTYzMjk5MTE3MSwianRpIjoiaVdrM3AxRFVTMDZPWlJwRyIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.fmsV-5BHDFQlTKlt0fvM7wkgtgG8koFj7YAa3uEP4yE
+
+###
+
+POST {{ host }}/api/fitness_summaries/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "BMI": 50.22,
+  "weight": 65.11,
+  "muscle_ratio": 64.76,
+  "height": 120.16,
+  "fat_ratio": 84.88,
+  "fitness_ratio": 91.38,
+  "total_body_water": 136.1,
+  "dry_lean_bath": 55.65,
+  "body_fat_mass": 20.92,
+  "opacity_ratio": 74.61,
+  "protein": 188.66,
+  "SMM": 99.15,
+  "date": "2021-08-25 07:55:46",
+  "member_id": 1
+}
+
+###
+
+DELETE {{ host }}/api/fitness_summaries/8 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+GET {{ host }}/api/fitness_summaries?endDate=2022-08-22 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###

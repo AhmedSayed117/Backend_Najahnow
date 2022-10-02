@@ -1,0 +1,67 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMzMzM3NTgzLCJleHAiOjE2MzMzNDExODMsIm5iZiI6MTYzMzMzNzU4MywianRpIjoiNWg3eXIzekppQmFYYnp6MCIsInN1YiI6NCwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.UsYJA9bhNXw25gYXCUcgq7x6DAcr9_PEFIwbs_mHMo0
+
+GET http://127.0.0.1:8000/api/items/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+# login
+POST http://127.0.0.1:8000/api/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "georgiana.kessler@example.com",
+  "password": "secret"
+}
+
+###
+
+# get all items
+GET http://127.0.0.1:8000/api/items HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+# create item
+POST http://127.0.0.1:8000/api/items/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "title": "CoolAbdoAnaV15",
+  "cal": 995,
+  "description": "asdasd",
+  "image": "asd",
+  "level": "red",
+  "nutritionist_id": 3
+}
+
+###
+
+# delete item
+DELETE http://127.0.0.1:8000/api/items/13 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+# edit item
+PUT http://127.0.0.1:8000/api/items/edit/13 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "title": "Sharnouby V2",
+  "id": 1,
+  "cal": 100,
+  "level": "red"
+}
+
+###
+
+# search
+GET http://127.0.0.1:8000/api/items/search?prefix=o HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}

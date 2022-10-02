@@ -1,0 +1,26 @@
+PUT http://gym_nn.test/api/meals/2/addItem HTTP/1.1
+content-type: application/json
+
+{
+    "itemId": 2,
+    "quantity": 5
+}
+
+###
+
+PUT http://gym_nn.test/api/meals/2/removeItem HTTP/1.1
+content-type: application/json
+
+{
+    "itemId": 2
+}
+
+###
+
+PUT http://gym_nn.test/api/meals/1/updateItem HTTP/1.1
+content-type: application/json
+
+{
+    "itemId": 1,
+    "quantity": 3
+}

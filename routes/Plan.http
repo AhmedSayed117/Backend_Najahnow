@@ -1,0 +1,46 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMzMjUzMTA5LCJleHAiOjE2MzMyNTY3MDksIm5iZiI6MTYzMzI1MzEwOSwianRpIjoiMFZPRkNjWUlGTTNsbmJTciIsInN1YiI6NCwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.6S8Vmqp-G6azw5VILUKqjjhDkYjpYgE8RW7W8dk-D6U
+
+GET http://127.0.0.1:8000/api/plans/1 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+### search
+
+GET http://127.0.0.1:8000/api/plans HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+### create an item
+
+POST http://127.0.0.1:8000/api/plans/create HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "cal": 542,
+  "title": "CoolAbdoAna5",
+  "level": "red"
+}
+
+### delete
+
+DELETE http://127.0.0.1:8000/api/plans/13 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+### edit
+
+PUT http://127.0.0.1:8000/api/plans/edit/12 HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "cal": 995,
+  "level": "red"
+}
+
+### search - prefix
+
+GET http://127.0.0.1:8000/api/plans/search?prefix=abdo HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}

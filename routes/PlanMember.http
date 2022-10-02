@@ -1,0 +1,38 @@
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNjMzMzM1ODA2LCJleHAiOjE2MzMzMzk0MDYsIm5iZiI6MTYzMzMzNTgwNiwianRpIjoiU0FuZk9ydmN2d2hic0pGcyIsInN1YiI6NCwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Qm3bBYaJO2KWJXYayDnJMvOFMbJHcMvbVi5oSN342JA
+
+PUT http://127.0.0.1:8000/api/members/2/addPlan HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "plan_id": 7,
+  "duration": "2 months"
+}
+
+###
+
+PUT http://127.0.0.1:8000/api/members/2/removePlan HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+PUT http://127.0.0.1:8000/api/members/1/updatePlan HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+{
+  "duration": "15 months"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/members/2/getActivePlan HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+GET http://127.0.0.1:8000/api/members/2/plans HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{ token }}
